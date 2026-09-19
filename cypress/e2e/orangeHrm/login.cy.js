@@ -101,20 +101,7 @@ describe("Pengguna dapat login kedalam sistem",()=>{
        cy.url().should('include', 'dashboard')
        cy.contains('Dashboard').should('be.visible')
     })
-
-    // it("TC012 - Pengguna dapat logout dari sistem",()=>{
-    //    cy.visit("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
-    //    cy.get("[name='username']").type("Admin")
-    //    cy.get("[name='password']").type("admin123")
-    //    cy.get("[type='submit']").click()
-
-    //    cy.get('.oxd-userdropdown-tab').click()
-    //    cy.contains('Logout').click()
-
-    //    cy.url().should('include', 'login')
-    //    cy.contains('Login').should('be.visible')
-    // })
-
+git add .
     it("TC012 - Pengguna dapat logout dari sistem", () => {
     cy.visit("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
 
@@ -122,16 +109,12 @@ describe("Pengguna dapat login kedalam sistem",()=>{
     cy.get("[name='password']").type("admin123")
     cy.get("[type='submit']").click()
 
-    // Pastikan login berhasil
     cy.url().should("include", "/dashboard")
 
-    // Buka profile
     cy.get(".oxd-userdropdown-tab").click()
 
-    // Klik Logout
     cy.contains("Logout").click()
 
-    // Pastikan kembali ke halaman login
     cy.url().should("include", "/auth/login")
     cy.get("[name='username']").should("be.visible")
 })
