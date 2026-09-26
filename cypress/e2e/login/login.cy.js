@@ -118,4 +118,6 @@ describe("Pengguna dapat login kedalam sistem",()=>{
         cy.url().should("include", "/auth/login")
         cy.get("[name='username']").should("be.visible")
     })
+
+    
 })
